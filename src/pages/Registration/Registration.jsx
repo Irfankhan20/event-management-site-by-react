@@ -11,6 +11,8 @@ const Registration = () => {
 
     const handleRegister = e => {
         e.preventDefault();
+        const accepted = e.target.terms.checked;
+        console.log(accepted);
         console.log(e.currentTarget);
         const form = new FormData(e.currentTarget);
         const name = form.get('name');
@@ -90,14 +92,17 @@ const Registration = () => {
                                     <span className="indicator-item badge bg-blue-500 text-white border-none">Required</span>
                                     <input type="password" name='password' placeholder="Password" className="input input-bordered" required />
                                     </div>
+
+                                    {/* terms and condition  */}
+                                    <div className="mb-3 mt-3">
+                                        <input type="checkbox" name="terms" id="terms" />
+                                        <label className="ml-2 font-medium" htmlFor="terms">Accept Our <a className="text-blue-500" href="">Terms and condition</a> </label>
+                                    </div>
                                     
-                                    {/* forgot password  */}
-                                    <label className="label">
-                                        <a href="#" className="label-text-alt text-lg link link-hover">Forgot password?</a>
-                                    </label>
+                                    
                                 </div>
 
-                                {/* login btn  */}
+                                {/* register btn  */}
                                 <div className="mt-6 form-control">
                                     <button className="border border-blue-500 hover:bg-blue-500 px-10 hover:text-white text-blue-500 font-bold text-lg py-2 rounded-lg shadow duration-300">Register</button>
                                 </div>
