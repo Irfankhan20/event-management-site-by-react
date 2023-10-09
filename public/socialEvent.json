@@ -1,0 +1,62 @@
+[
+    {
+        "id": 1,
+        "img": "https://i.ibb.co/3c4HK38/charming-newlyweds-smile-standing-before-wedding-altar.jpg",
+        
+        "title": "Elegant Wedding Planning",
+        "description": "Let us make your dream wedding a reality with our expert planning and coordination services. Our team of experienced professionals will work closely with you to ensure that every detail, from the venue selection to the floral arrangements and catering, is executed flawlessly. We understand that your wedding day is one of the most important moments in your life, and we're here to make it truly special and stress-free.",
+        "number_of_purchase": 250,
+        "price": 2000,
+        "rating": 5
+    },
+    {
+        "id": 2,
+        "img": "https://i.ibb.co/B6qphM7/rghrtgh.jpg",
+       
+        "title": "Birthday Bash Extravaganza",
+        "description": "Throw the ultimate birthday party with our event management expertise and unique themes. Whether you're celebrating a milestone birthday or a special occasion, our team will design a celebration that reflects your personality and preferences. From creative decor to entertainment, we've got you covered. Let's create memories that you and your guests will cherish forever.",
+        "number_of_purchase": 150,
+        "price": 800,
+        "rating": 5
+    },
+    {
+        "id": 3,
+        "img": "https://i.ibb.co/fDR58zT/anniversary.jpg",
+       
+        "title": "Anniversary Package",
+        "description": "Celebrate your love story with a beautifully orchestrated anniversary event tailored just for you. Our planners specialize in crafting romantic and intimate gatherings that capture the essence of your relationship. Whether it's your first anniversary or a milestone celebration, we'll ensure that your special day is filled with love, laughter, and cherished moments.",
+        "number_of_purchase": 100,
+        "price": 1500,
+        "rating": 4.7
+    },
+    {
+        "id": 4,
+        "img": "https://i.ibb.co/qMr8n8r/engagement.jpg",
+      
+        "title": "Engagement Party Spectacular",
+        "description": "Mark the beginning of your journey together with a memorable engagement party designed to perfection. Our dedicated team will create an ambiance that's perfect for your style and preferences. From elegant decor to personalized touches, we'll make sure your engagement party is an unforgettable experience for you and your guests.",
+        "number_of_purchase": 120,
+        "price": 1000,
+        "rating": 4.8
+    },
+    {
+        "id": 5,
+        "img": "https://i.ibb.co/dtQKkfq/retirement.jpg",
+     
+        "title": "Retirement Celebration Soiree",
+        "description": "Say farewell to your professional life in style with a retirement party that honors your achievements. Our event planners will ensure that your retirement celebration reflects your career accomplishments and future adventures. Whether you prefer a formal affair or a casual gathering, we'll create a memorable event that marks this important milestone in your life.",
+        "number_of_purchase": 80,
+        "price": 1200,
+        "rating": 4.5
+    },
+    {
+        "id": 6,
+        "img": "https://i.ibb.co/5R0s3jH/Katies-Bliss-Baby-Shower-14.jpg",
+       
+        "title": "Baby Shower Bliss",
+        "description": "Welcome the newest member of your family with a heartwarming baby shower filled with joy and surprises. Our team specializes in creating baby showers that capture the excitement of parenthood. From adorable decorations to fun games and delicious treats, we'll ensure that your baby shower is a delightful and memorable occasion for you and your loved ones.",
+        "number_of_purchase": 200,
+        "price": 600,
+        "rating": 5
+    }
+]
