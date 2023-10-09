@@ -2,6 +2,8 @@ import { Link } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 
 
@@ -21,14 +23,60 @@ const Registration = () => {
         const password = form.get('password');
         console.log(name, photo, email, password);
 
+        // password will be upto 6 characters 
+        if (password.length < 6) {
+           
+            toast.error('Password must be at least 6 characters long', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+            return;
+        }
+        
+
+        if (!accepted) {
+            
+            toast.error('Please accept the Terms and Conditions', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+            return;
+        }
+
         // create user 
         createUser(email, password)
-        .then(result => {
-            console.log(result.user)
+        .then((result) => {
+            console.log(result.user);
+            
+            toast.success('Registration successful!', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
         })
-        .catch(error => {
-            console.error(error)
-        })
+        .catch((error) => {
+            console.error(error);
+            
+            toast.error('Registration failed. Please try again.', {
+                position: 'top-right',
+                autoClose: 3000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: true,
+                draggable: true,
+            });
+        });
     }
 
     
@@ -130,6 +178,7 @@ const Registration = () => {
                     </div>
                 </div>
             </div>
+            <ToastContainer></ToastContainer>
         </div>
     );
 };

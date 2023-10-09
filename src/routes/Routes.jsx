@@ -8,6 +8,8 @@ import Login from "../pages/Login/Login";
 import Registration from "../pages/Registration/Registration";
 import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "./PrivateRoute";
+import ContactUs from "../pages/contactUs/ContactUs";
+import ErrorPage from "../pages/Errorpage/ErrorPage";
 
 
 
@@ -37,7 +39,17 @@ const router = createBrowserRouter([
                 path: '/service/:id',
                 element: <PrivateRoute><ServiceDetails></ServiceDetails></PrivateRoute>,
                 loader: ()=>fetch('/socialEvent.json')
-            }
+            },
+            {
+                path: '/contact',
+                element: <PrivateRoute><ContactUs></ContactUs></PrivateRoute>
+                
+            },
+            {
+                path: "*",
+                element:<ErrorPage></ErrorPage>
+            
+              }
         ]
     }    
 ]);

@@ -3,7 +3,7 @@
 
 import { useContext } from 'react';
 import './Navber.css'
-import { Link, NavLink } from 'react-router-dom';
+import { Link, NavLink, useParams } from 'react-router-dom';
 import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 
 
@@ -11,6 +11,7 @@ import { AuthContext } from '../../providers/AuthProvider/AuthProvider';
 
 
 const Navbar = () => {
+    
     
     const {user, logOut} = useContext(AuthContext);
     const handleLogOut = () =>{
@@ -54,22 +55,23 @@ const Navbar = () => {
                                         Home
                                     </NavLink>
                                 </li>
+                                
                                 <li>
                                     <NavLink
-                                        to="/gallery"
-                                        className="normal-case text-xl text-white"
-                                        activeClassName="active"
-                                    >
-                                        Gallery
-                                    </NavLink>
-                                </li>
-                                <li>
-                                    <NavLink
-                                        to="/service"
+                                        to= "service/:id"
                                         className="normal-case text-xl text-white"
                                         activeClassName="active"
                                     >
                                        Service Details 
+                                    </NavLink>
+                                </li>
+                                <li>
+                                    <NavLink
+                                        to="/contact"
+                                        className="normal-case text-xl text-white"
+                                        activeClassName="active"
+                                    >
+                                       Contact Us 
                                     </NavLink>
                                 </li>
                                 <li>
@@ -97,15 +99,7 @@ const Navbar = () => {
                                     Home
                                 </NavLink>
                             </>
-                            <>
-                            <NavLink
-                                        to="/gallery"
-                                        className="normal-case text-xl text-white"
-                                        activeClassName="active"
-                                    >
-                                        Gallery
-                                    </NavLink>
-                            </>
+                            
                             <>
                             <NavLink
                                         to="/service"
@@ -113,6 +107,15 @@ const Navbar = () => {
                                         activeClassName="active"
                                     >
                                        Service Details 
+                                    </NavLink>
+                            </>
+                            <>
+                            <NavLink
+                                        to="/contact"
+                                        className="normal-case text-xl text-white"
+                                        activeClassName="active"
+                                    >
+                                       Contact Us 
                                     </NavLink>
                             </>
 
