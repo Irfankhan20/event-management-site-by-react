@@ -1,15 +1,20 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import Navbar from "../shared/Navbar";
 import { useContext } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
+import { updateProfile } from "firebase/auth";
+
 
 
 
 const Registration = () => {
 
     const {createUser} = useContext(AuthContext);
+    const location = useLocation();
+    const navigate = useNavigate();
+    const from = location.state?.from.pathname || '/'
 
     const handleRegister = e => {
         e.preventDefault();
@@ -55,6 +60,7 @@ const Registration = () => {
         createUser(email, password)
         .then((result) => {
             console.log(result.user);
+            handleUpdateUser(name, photo);
             
             toast.success('Registration successful!', {
                 position: 'top-right',
@@ -63,7 +69,10 @@ const Registration = () => {
                 closeOnClick: true,
                 pauseOnHover: true,
                 draggable: true,
+
+               
             });
+            navigate(from,{replace:true})
         })
         .catch((error) => {
             console.error(error);
@@ -77,6 +86,16 @@ const Registration = () => {
                 draggable: true,
             });
         });
+        const handleUpdateUser = (name, photo) => {
+            const profile = {
+              displayName: name,
+              photoURL: photo,
+            };
+            console.log("🚀 ~ file: Registration.jsx:38 ~ handleUpdateUser ~ profile:", profile)
+            updateProfile(profile)
+              .then(() => {})
+              .catch((error) => console.error(error));
+          };
     }
 
     

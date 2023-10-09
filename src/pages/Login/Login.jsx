@@ -7,7 +7,7 @@ import Navbar from "../shared/Navbar";
 // useState extra 
 import { useContext, useRef } from "react";
 import { AuthContext } from "../../providers/AuthProvider/AuthProvider";
-import { getAuth } from "firebase/auth"; 
+import { GoogleAuthProvider, getAuth, signInWithPopup } from "firebase/auth"; 
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import { sendPasswordResetEmail } from "firebase/auth";
@@ -18,6 +18,19 @@ const Login = () => {
     const location = useLocation();
     const navigate = useNavigate();
     const emailRef = useRef(null);
+    const provider = new GoogleAuthProvider();
+    const from = location?.state?.from.pathname || '/'
+
+    const handleGoogleSignIn=()=>{
+        signInWithPopup(auth,provider)
+        .then(result=>{
+            const loggedInUser=result.data;
+            navigate(from,{replace:true})
+            toast.success('Successfully logged in');
+
+        })
+        .catch(err=>{console.log(err);});
+    }
 
     // extra 
     // const [loginStatus, setLoginStatus] = useState(null);
@@ -165,13 +178,10 @@ const Login = () => {
 
                                     {/* log in by google and github  */}
                                     <div className='my-4'>
-                                        <button className='px-4'>
+                                        <button onClick={handleGoogleSignIn} className='px-4'>
                                             <img className='w-10' src="https://i.ibb.co/ftwyb00/Google-G-Logo-svg.png" alt="" />
                                         </button>
-                                        <button className='px-4'>
-                                            <img className='w-10' src="https://i.ibb.co/VxKN3Mg/github.png" alt="" />
-
-                                        </button>
+                                        
                                     </div>
                                     <div>
 

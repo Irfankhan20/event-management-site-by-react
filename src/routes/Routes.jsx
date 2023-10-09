@@ -10,6 +10,7 @@ import ServiceDetails from "../pages/ServiceDetails/ServiceDetails";
 import PrivateRoute from "./PrivateRoute";
 import ContactUs from "../pages/contactUs/ContactUs";
 import ErrorPage from "../pages/Errorpage/ErrorPage";
+import AllGallery from "../pages/AllGallery/AllGallery";
 
 
 
@@ -48,6 +49,11 @@ const router = createBrowserRouter([
             {
                 path: "*",
                 element:<ErrorPage></ErrorPage>
+            
+              },
+            {
+                path: '/gallery',
+                element:<AllGallery></AllGallery>
             
               }
         ]
